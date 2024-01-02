@@ -14,6 +14,9 @@ import com.example.jpa.CalculatorDataEntity;
 import com.example.request.CalculatorRequest;
 import com.example.response.CalculatorResponse;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class DemoCalculatorService {
 

@@ -1,0 +1,41 @@
+version: "3.8"
+ 
+services:
+  app:
+    image: springcalculatordemoproject-app
+    restart: always
+    ports:
+      - 8080:8080
+    
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3307/calculator?allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_REDIS_HOST: redis
+      SPRING_REDIS_PORT: 6379
+      SPRING-CACHE-REDIS-TIME-TO-LIVE: 1h
+    depends_on:
+      - db
+      - redis
+ 
+  db:
+    image: mysql:8.0.27
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: calculator
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"  # Use MYSQL_ALLOW_EMPTY_PASSWORD for root
+      MYSQL_TCP_PORT: 3307
+    command: --default-authentication-plugin=mysql_native_password --skip-ssl
+    ports:
+      - 3307:3307
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -uroot -proot -hdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+ 
+  redis:
+    image: redis:latest
+    #command: redis-server --requirepass redis_password  # Specify a strong password here
+    ports:
+      - 6379:6379

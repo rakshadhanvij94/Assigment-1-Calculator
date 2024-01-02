@@ -22,7 +22,7 @@ class SpringCalculatorDemoProjectApplicationTests {
 	@Test
 		public void additionTest() {
 		    double result = 21.0;
-			String details = "11.0+10.0=21.0";
+			String details = "11.0 + 10.0 = 21.0";
 			CalculatorRequest calculatorRequest = new CalculatorRequest();
 			 
 			double numberOne=11.0;
@@ -44,7 +44,7 @@ class SpringCalculatorDemoProjectApplicationTests {
 	@Test
 		public void subtractionTest() {
 		    double result = 1.0;
-			String details = "11.0-10.0=1.0";
+			String details = "11.0 - 10.0 = 1.0";
 			CalculatorRequest calculatorRequest = new CalculatorRequest();
 			double numberOne=11.0;
 			double numberTwo=10.0;
@@ -65,7 +65,7 @@ class SpringCalculatorDemoProjectApplicationTests {
 	@Test
 		public void multiplicationTest() {
 		    double result = 20.0;
-			String details = "10.0*2.0=20.0";
+			String details = "10.0 * 2.0 = 20.0";
 			CalculatorRequest calculatorRequest = new CalculatorRequest();
 			double numberOne=10.0;
 			double numberTwo=2.0;
@@ -86,7 +86,7 @@ class SpringCalculatorDemoProjectApplicationTests {
 	@Test
 		public void divisionTest() {
 		    double result = 2.0;
-			String details = "10.0/5.0=2.0";
+			String details = "10.0 / 5.0 = 2.0";
 			CalculatorRequest calculatorRequest = new CalculatorRequest();
 			double numberOne=10.0;
 			double numberTwo=5.0;

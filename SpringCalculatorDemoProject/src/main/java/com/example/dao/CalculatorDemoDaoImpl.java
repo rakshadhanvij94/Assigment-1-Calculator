@@ -14,6 +14,9 @@ import com.example.response.CalculatorResponse;
 import com.example.transformer.CalculatorTransformer;
 import com.example.util.Utils;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Component
 public class CalculatorDemoDaoImpl {
 

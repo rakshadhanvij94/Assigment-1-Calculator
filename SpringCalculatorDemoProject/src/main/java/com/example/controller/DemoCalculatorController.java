@@ -13,17 +13,21 @@ import com.example.request.CalculatorRequest;
 import com.example.response.CalculatorResponse;
 import com.example.service.DemoCalculatorService;
 
+import lombok.extern.slf4j.Slf4j;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 //@ComponentScan(basePackages = "com.example")
 //@EnableSwagger2
+@Slf4j
 @RequestMapping("/calculator/v1")
 @RestController
 public class DemoCalculatorController {
 	
+	//Logger log;
+	 
 	/** The Constant LOG. */
 	private static final Logger LOG = LoggerFactory.getLogger(DemoCalculatorController.class);
-	  
+	
 	@Autowired
 	DemoCalculatorService demoCalculatorService;
 	
@@ -39,7 +43,7 @@ public class DemoCalculatorController {
 		CalculatorRequest calculatorRequest = new CalculatorRequest();
 		calculatorRequest.setNumberOne(number1);
 		calculatorRequest.setNumberTwo(number2);
-	    LOG.info("DemoCalculatorController.addition() request :");
+		LOG.info("DemoCalculatorController.addition() request :");
 	    
 	    CalculatorResponse calculatorResponse= demoCalculatorService.getAdditionOfTwoNumbers(calculatorRequest);
 	    
